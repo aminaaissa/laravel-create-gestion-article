@@ -3,7 +3,7 @@
 @if(empty($article))
 <button  class="btn btn-warning" onClick="window.print()">Print this page</button>`
 @component('../button')
-create
+insert
 @endcomponent
 
 
@@ -11,7 +11,8 @@ create
 
 
 <h3>Listes Articles
-</h3><form action="" class="form-inline">
+</h3>
+<form action="" class="form-inline">
   <input type="search" value="{{request('search')}} " class="form-control" 
   placeholder="Rechercher...." name="search">
   <button class="btn btn-error"> <i class="fa fa-search"></i></button>

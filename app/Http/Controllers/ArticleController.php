@@ -48,7 +48,6 @@ return view('articles.create');
                     //'body'=>request('body'),
                     //'published_at'=>request('published_at'),
                 //]);
-            //article::create(request()->all() +['user_id'=>1]);
                 // return redirect()->route('articles.index');
                 request()->validate([
                     'name'=>'required|min:4|unique:articles',
@@ -56,6 +55,8 @@ return view('articles.create');
                     'body'=>'required',
                     
                     ]);
+                    article::create(request()->all() +['user_id'=>1]);
+
 
     }
     public function update(){

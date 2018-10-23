@@ -3,11 +3,27 @@
 <div class="container">
         <h4>Insert Article</h4>
       
+@if($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach($errors->all() as $error)
+<li>{{$error}}</li>
+@endforeach
+
+</ul>
+
+
+
+</div>
+@endif
 
 <form action="{{ route('articles.store')}}" method="post">
     @csrf
-    Name:<input type="text" name="name" class="form-control"><br>
-    published_at:<input type="date" name="published_at" class="form-control"><br>
-    Body:<textarea type="text" name="body" class="form-control"></textarea><br>
+Name:<input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid':'' }}" value="{{ old('name') }}"><br>
+
+    published_at:<input type="date" name="published_at" class="form-control" value="{{old('published_at')}}"><br>
+
+    Body:<textarea type="text" name="body" class="form-control" value="{{old('body')}}"></textarea><br>
+
   <button class="btn btn-info">Add</button>
 </form></div>
