@@ -11,26 +11,16 @@ class ArticleController extends Controller
     public function index()
            {
 //$articles=Article::all();//model json
-           $articles=Article::paginate(10
-
-
-);//model json
+           $articles=Article::paginate(10);//model json
 //searching 
 
               $search=request('search');
                 $articles =Article::where('name','like',"%$search%")
                 ->orWhere('body','like',"%$search%")
                  ->paginate(10);
-
-
-
-
-
-
-
-return view('articles.article',['articles'=>$articles]);
+    return view('articles.article',['articles'=>$articles]);
 //return Article::all();
-    }
+                    }
 
 public function create(){
 
