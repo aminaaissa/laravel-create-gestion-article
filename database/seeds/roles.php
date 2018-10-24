@@ -12,10 +12,10 @@ class roles extends Seeder
     public function run()
     {
          //
-Rolle::insert(['name'=>"Admin"]);
-Rolle::insert(['name'=>"Editeur"]);
-Rolle::insert(['name'=>"Auteur"]);
-Rolle::insert(['name'=>"visiteur"]);
+Role::insert(['name'=>"Admin"]);
+Role::insert(['name'=>"Editeur"]);
+Role::insert(['name'=>"Auteur"]);
+Role::insert(['name'=>"visiteur"]);
 
 DB::table('user_role')->insert([
     'user_id'=> 1,

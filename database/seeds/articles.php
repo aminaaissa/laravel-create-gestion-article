@@ -29,7 +29,7 @@ class articles extends Seeder
             ]);
         }
         
-        User::insert($data);
+        DB::table('articles')->insert($data);
 
         //
     }

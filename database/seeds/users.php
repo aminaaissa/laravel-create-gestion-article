@@ -19,7 +19,7 @@ class users extends Seeder
             array_push($data, [
                 'name' =>$faker->name,
                 'email' =>$faker->email,
-                'password' => bcrypt('123456'),
+                'password' =>bcrypt('123456'),
                 
             ]);
         }
