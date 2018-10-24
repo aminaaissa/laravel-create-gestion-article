@@ -17,4 +17,10 @@ class Article extends Model
             </mark>',$this->attributes['name']);
         }
     }
+
+    public function user(){
+
+
+        return $this->belongsTo(User::class)->withDefault(); //article appartient à un user
+    }
 }
